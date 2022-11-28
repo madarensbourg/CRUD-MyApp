@@ -3,7 +3,7 @@ const express = require('express');
 const { restart } = require('nodemon');
 const router = express.Router();
 
-//Imdex Route
+//Index Route
 router.get('/', (req, res) => {
 
 	db.Destination.find({}, (err, destinations) => {
@@ -61,36 +61,40 @@ router.get('/seed', async (req, res) => {
 			timeOfYear: 'Spring',
 			description:
 				'Borrego Springs is a census-designated place in San Diego County, California. The population was 3,429 at the 2010 census, up from 2,535 at the 2000 census, made up of both seasonal and year-round residents. Borrego Springs is completely surrounded by Anza-Borrego State Park, the largest California State Park.',
-			img: 'https://cdn3.bigcommerce.com/s-a6pgxdjc7w/products/1075/images/967/416130__50605.1467418920.1280.1280.jpg?c=2',
+			img: 'https://www.desertusa.com/borrego/photos/IMG_4720.jpg',
 			mileage: 85,
 			roadTerrain: 'Downhill Grade',
+            difficulty: 'Moderate'
 		},
 		{
 			name: 'Big Sur',
 			timeOfYear: 'Spring, Summer, Fall',
 			description:
 				'Big Sur is a rugged stretch of California’s central coast between Carmel and San Simeon. Bordered to the east by the Santa Lucia Mountains and the west by the Pacific Ocean, it’s traversed by narrow, 2-lane State Route 1, known for winding turns, seaside cliffs and views of the often-misty coastline. The sparsely populated region has numerous state parks for hiking, camping and beachcombing',
-			img: 'https://cdn3.bigcommerce.com/s-a6pgxdjc7w/products/1075/images/967/416130__50605.1467418920.1280.1280.jpg?c=2',
+			img: 'https://en.wikipedia.org/wiki/Big_Sur#/media/File:Central_Californian_Coastline,_Big_Sur_-_May_2013.jpg',
 			mileage: 90,
 			roadTerrain: 'Windy',
+            difficulty: 'Moderate',
 		},
 		{
 			name: 'California 1',
 			timeOfYear: 'Summer',
 			description:
 				'State Route 1 is a major north–south state highway that runs along most of the Pacific coastline of the U.S. state of California. At 656 miles, it is the longest state route in California, and the second-longest in the US after Montana Highway 200.',
-			img: 'https://cdn3.bigcommerce.com/s-a6pgxdjc7w/products/1075/images/967/416130__50605.1467418920.1280.1280.jpg?c=2',
+			img: 'https://www.lanmodo.com/res/article/Lanmodo-NVS/highway-1-california-road-trip.jpg',
 			mileage: 655.1,
 			roadTerrain: 'Various Terrain Types',
+            difficulty: 'Expert',
 		},
 		{
-			name: 'California 1',
+			name: 'Avenue Of the Giants',
 			timeOfYear: 'Summer',
 			description:
 				'State Route 1 is a major north–south state highway that runs along most of the Pacific coastline of the U.S. state of California. At 656 miles, it is the longest state route in California, and the second-longest in the US after Montana Highway 200.',
-			img: 'https://cdn3.bigcommerce.com/s-a6pgxdjc7w/products/1075/images/967/416130__50605.1467418920.1280.1280.jpg?c=2',
-			mileage: 655.1,
+			img: 'https://www.mdvaden.com/images/Avenue_Giants_760.jpg',
+			mileage: 31.59,
 			roadTerrain: 'Various Terrain Types',
+            difficulty: 'Beginner',
 		},
 	];
 

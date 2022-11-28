@@ -9,6 +9,7 @@ const app = express();
 const db = require('./models');
 // access controllers
 const destinationsCtrl = require('./controllers/destinations');
+const usersCtrl = require('./controllers/users')
 const port = 3000;
 
 // +-+-+-+-+-+-+-+-+-+-+
@@ -28,7 +29,7 @@ app.use(express.urlencoded({ extended: true }));
 // +-+-+-+-+-+-+
 // All routes affecting the Location model: This tells our app to look at the `controllers/products.js` file to handle all routes that begin with `localhost:3000/product`
 app.use('/', destinationsCtrl);
-
+app.use('/', usersCtrl);
 // +-+-+-+-+-+-+-+-+
 // |L|I|S|T|E|N|E|R|
 // +-+-+-+-+-+-+-+-+

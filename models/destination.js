@@ -16,6 +16,7 @@ const destinationSchema = new Schema({
 	},
 	mileage: { type: Number, required: true },
 	roadTerrain: { type: String, required: true },
+	difficulty: { type: String, required: true },
 });
 
 // create a Product model using the productSchema
