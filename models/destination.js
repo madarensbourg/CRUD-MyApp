@@ -7,6 +7,7 @@ const Schema = mongoose.Schema;
 // create a Product schema
 const destinationSchema = new Schema({
 	name: { type: String, required: true },
+	timeOfYear: { type: String, required: true },
 	description: { type: String, required: true },
 	img: {
 		type: String,
@@ -14,7 +15,7 @@ const destinationSchema = new Schema({
 			'https://sainfoinc.com/wp-content/uploads/2018/02/image-not-available-570x570.jpg',
 	},
 	mileage: { type: Number, required: true },
-	road: { type: Number, required: true },
+	roadTerrain: { type: String, required: true },
 });
 
 // create a Product model using the productSchema

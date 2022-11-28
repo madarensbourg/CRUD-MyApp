@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%- include ("./partials/head.ejs") %>
+        <link rel="stylesheet" href="/styles/home.css">
+</head>
+
+<body>
+    <h1 id="home-title">Welcome to California!</h1>
+    <div id="flex-grid">
+        <% for (let destination of destinations) { %>
+            <a href="/destination/<%= destination._id %>">
+                <figure class="destination-card">
+                    <img alt="<%= destination.name %>" src="<%= destination.img%>" width="300">
+                    <figcaption>
+                        <h2>
+                            <%=destination.name%>
+                        </h2>
+                        <h4>
+                            <%= destination.description %>
+                        </h4>
+                    </figcaption>
+                </figure>
+            </a>
+            <% } %>
+    </div>
