@@ -5,12 +5,13 @@
 const methodOverride = require('method-override');
 const express = require('express');
 const app = express();
+require('dotenv').config()
 // access models
 const db = require('./models');
 // access controllers
 const destinationsCtrl = require('./controllers/destinations');
 const usersCtrl = require('./controllers/users')
-const port = 3000;
+const port = process.env.PORT;
 
 // +-+-+-+-+-+-+-+-+-+-+
 // |M|I|D|D|L|E|W|A|R|E|
@@ -28,8 +29,13 @@ app.use(express.urlencoded({ extended: true }));
 // |R|O|U|T|E|S|
 // +-+-+-+-+-+-+
 // All routes affecting the Location model: This tells our app to look at the `controllers/products.js` file to handle all routes that begin with `localhost:3000/product`
-app.use('/', destinationsCtrl);
-app.use('/', usersCtrl);
+app.use('/destination', destinationsCtrl);
+app.use('/user', usersCtrl);
+
+app.get('/', (req, res) => { 
+	res.redirect('/destination')
+});
+
 // +-+-+-+-+-+-+-+-+
 // |L|I|S|T|E|N|E|R|
 // +-+-+-+-+-+-+-+-+

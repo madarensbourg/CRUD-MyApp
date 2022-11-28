@@ -8,6 +8,27 @@
 
 <body>
     <h1 id="home-title">Welcome to California!</h1>
+        <div class="flex-container">
+            <form action="/user" method="post">
+                <input type="text" firstName="first name" placeholder="First Name" required />
+                <input type="text" lastName="last name" placeholder="Last Name" required />
+                <select name="classification">
+                    <option value="harley davidson">Harley Davidson</option>
+                    <option value="honda">Honda</option>
+                    <option value="indian motorcycles">Indian Motorcycle</option>
+                    <option value="bmw">BMW</option>
+                </select>
+                <select name="status" value="unknown">
+                    <option value="beginner">Beginner</option>
+                    <option value="moderate">Moderate</option>
+                    <option value="expert">Expert</option>
+                </select>
+                <input type="checkbox" name="visited" />
+                <input type="text" name="image"
+                    value="https://sainfoinc.com/wp-content/uploads/2018/02/image-not-available-570x570.jpg" />
+                <button type="submit">Create User</button>
+            </form>
+        </div>
     <div id="flex-grid">
         <% for (let destination of destinations) { %>
             <a href="/destination/<%= destination._id %>">

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ('./partials/head.ejs') %>
+        <link rel="stylesheet" href="/styles/showDestination.css" />
+</head>
+
+<body>
+        <div class="flex-container">
+            <div id="destination">
+                <img src=<%=destination.image %> width="300"/>
+                <h1>
+                    <%=destination.name%>
+                </h1>
+                <p>
+                    Description: <%= destination.description %>
+                </p>
+                <p>
+                    Difficulty: <%= destination.difficulty.toUpperCase() %>
+                </p>
+                <p>
+                    Visited: <%= destination.visited %>
+                </p>
+            </div>
+        </div>
+</body>
+<script>
+
+    const destinationMenu = document.getElementById("locations-menu")
+        const destinationBtn = document.getElementById("location-btn")
+
+     destinationBtn.addEventListener('click', (e) => {
+            if (e.target.innerText === 'Hide Menu') {
+                locationMenu.classList.remove('open-menu')
+                locationMenu.classList.add('close-menu')
+                locationBtn.innerText = "Show Menu"
+            } else if (e.target.innerText === 'Show Menu') {
+                locationMenu.classList.add('open-menu')
+                locationMenu.classList.remove('close-menu')
+                locationBtn.innerText = "Hide Menu"
+            }
+        })
+</script>
+
+</html>
