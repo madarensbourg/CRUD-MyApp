@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ('./partials/head.ejs') %>
+</head>
+
+<body>
+        <div class="flex-container">
+            <form action="/destination/" method="post">
+                <input type="text" name="author" placeholder="author" />
+                <textarea name="content" placeholder="content"></textarea>
+                <input type="number" name="starDate" value="12022" />
+                <button type="submit">Log Entry</button>
+            </form>
+        </div>
+</body>
+
+</html>

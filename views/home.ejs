@@ -7,7 +7,8 @@
 </head>
 
 <body>
-    <h1 id="home-title">Welcome to California!</h1>
+    <h1 id="home-title">California Cruisin</h1>
+    <h2>Check out some local rides</h2>
         <div class="flex-container">
             <form action="/user" method="post">
                 <input type="text" firstName="first name" placeholder="First Name" required />
@@ -29,20 +30,22 @@
                 <button type="submit">Create User</button>
             </form>
         </div>
-    <div id="flex-grid">
-        <% for (let destination of destinations) { %>
-            <a href="/destination/<%= destination._id %>">
-                <figure class="destination-card">
-                    <img alt="<%= destination.name %>" src="<%= destination.img%>" width="300">
-                    <figcaption>
-                        <h2>
-                            <%=destination.name%>
-                        </h2>
-                        <h4>
-                            <%= destination.description %>
-                        </h4>
-                    </figcaption>
-                </figure>
-            </a>
-            <% } %>
-    </div>
+
+        <div id="flex-grid">
+            <% for (let destination of destinations) { %>
+                <a href="/destination/<%= destination._id %>">
+                    <figure class="destination-card">
+                        <img alt="<%= destination.name %>" src="<%= destination.img%>" width="300">
+                        <figcaption>
+                            <h2>
+                                <%=destination.name%>
+                            </h2>
+                            <h4>
+                                <%= destination.description %>
+                            </h4>
+                        </figcaption>
+                    </figure>
+                </a>
+                <% } %>
+        </div>
+   

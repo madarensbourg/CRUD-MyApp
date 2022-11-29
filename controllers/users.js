@@ -13,7 +13,8 @@ router.get('/:id', (req, res) => {
 //Create Route
 router.post('/', (req, res) => {
 	db.User.create(req.body, (err, user) => {
-		res.send(user);
+		// res.send(user);
+        res.redirect('/')
 	});
 });
 

@@ -9,21 +9,24 @@
 <body>
         <div class="flex-container">
             <div id="destination">
-                <img src=<%=destination.image %> width="300"/>
+                <img src=<%=destination.img %> width="300"/>
                 <h1>
                     <%=destination.name%>
                 </h1>
                 <p>
-                    Description: <%= destination.description %>
+                     <%= destination.description %>
                 </p>
-                <p>
-                    Difficulty: <%= destination.difficulty.toUpperCase() %>
-                </p>
-                <p>
-                    Visited: <%= destination.visited %>
-                </p>
+               <p>
+                 Best Time to Visit: <%= destination.timeOfYear %>
+               </p>
+               <p>
+                Miles Round Trip: <%= destination.mileage %><br>
+                Difficulty: <%= destination.difficulty %>
+                Terrain: <%= destination.roadTerrain %>
+               </p>
             </div>
         </div>
+        
 </body>
 <script>
 
