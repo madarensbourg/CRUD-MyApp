@@ -25,6 +25,9 @@
                 Terrain: <%= destination.roadTerrain %>
                </p>
             </div>
+            <form action="/destination/<%= destination._id %>?_method=DELETE" method="POST">
+            <button class="delete" type="submit">DELETE</button>
+            </form>
         </div>
         
 </body>

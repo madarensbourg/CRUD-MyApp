@@ -85,37 +85,16 @@ router.get('/:id', (req, res) => {
 	});
 });
 
+
+
+
 //////////////////////////////////////////
 //////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////
 ////////////////////////////////////////
 
-// New Route (GET/Read): This route renders a form the user will use to POST (create) a new location
-router.get('/new', (req, res) => {
-    res.render('newDestination', {
-        tabTitle: "Destination Creation"
-    })
-})
 
-// <<<<<<< HEAD
-// >>>>>>> main
-router.get('/:id', (req, res) => {
-    db.Destination.findById(req.params.id, (err, destination) => {
-        // res.send(location)
-        res.render("showDestination", {
-            destination: destination,
-            tabTitle: "Destination: " + destination.name
-        })
-    })
-})
 
-router.post('/', (req, res) => {
-	db.Destination.create(req.body, (err, destinations) => {
-		res.send(destinations);
-	});
-});
-//create location route
-// =======
 // Create Route (POST/Create): This route receives the POST request sent from the new route above, parses it into a location object, creates the location object as a document in the locations collection, and redirects the user back to the root/home page
 router.post('/', (req, res) => {
     if (req.body.visited) {
@@ -130,15 +109,22 @@ router.post('/', (req, res) => {
 // >>>>>>> main
 
 // Show Route (GET/Read): This route will show an individual location document using the URL parameter (which will always be the location document's ID)
-router.get('/:id', (req, res) => {
-    db.Destination.findById(req.params.id, (err, destination) => {
-        res.render("showDestination", {
-            destination: destination,
-            tabTitle: "Destination: " + destination.name
-        })
-    })
-})
+// router.get('/:id', (req, res) => {
+//     db.Destination.findById(req.params.id, (err, destination) => {
+//         res.render("showDestination", {
+//             destination: destination,
+//             tabTitle: "Destination: " + destination.name
+//         })
+//     })
+// })
 
+//Delete Route
+router.delete('/:id', (req, res) => {
+	db.Destination.findByIdAndDelete(req.params.id, (err, destination) => {
+		res.redirect('/destination');
+        
+	});
+});
 
 // //Create Route
 // router.post('/', (req, res) => {
@@ -147,24 +133,19 @@ router.get('/:id', (req, res) => {
 // 	});
 // });
 
-// //Update Route
-// router.put('/:id', (req, res) => {
-// 	db.Destination.findByIdAndUpdate(
-// 		req.params.id,
-// 		req.body,
-// 		{ new: true },
-// 		(err, destination) => {
-// 			res.send(destination);
-// 		}
-// 	);
-// });
+//Update Route
+router.put('/:id', (req, res) => {
+	db.Destination.findByIdAndUpdate(
+		req.params.id,
+		req.body,
+		{ new: true },
+		(err, destination) => {
+			res.send(destination);
+		}
+	);
+});
 
-// //Delete Route
-// router.delete('/destination/:id', (req, res) => {
-// 	db.Destination.findByIdAndDelete(req.params.id, (err, destination) => {
-// 		res.redirect('/');
-// 	});
-// });
+
 
 
 

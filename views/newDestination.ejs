@@ -6,11 +6,16 @@
 </head>
 
 <body>
+    <h1>Add A New Destination</h1>
         <div class="flex-container">
             <form action="/destination/" method="post">
-                <input type="text" name="author" placeholder="author" />
-                <textarea name="content" placeholder="content"></textarea>
-                <input type="number" name="starDate" value="12022" />
+                <input type="text" name="name" placeholder="Name" />
+                <input type="text" name="timeOfYear" placeholder="Best time of Year to Ride" />
+                <textarea name="description" placeholder="description"></textarea>
+                <input type="text" name="img" placeholder="Place Image Link Here" />
+                <input type="number" name="mileage" value="50" />
+                <input type="text" name="roadTerrain" placeholder="Describe Road Condition" />
+                <input type="text" name="difficulty" placeholder="Describe Experience Level" />
                 <button type="submit">Log Entry</button>
             </form>
         </div>

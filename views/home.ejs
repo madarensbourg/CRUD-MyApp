@@ -10,25 +10,17 @@
     <h1 id="home-title">California Cruisin</h1>
     <h2>Check out some local rides</h2>
         <div class="flex-container">
-            <form action="/user" method="post">
-                <input type="text" firstName="first name" placeholder="First Name" required />
-                <input type="text" lastName="last name" placeholder="Last Name" required />
-                <select name="classification">
-                    <option value="harley davidson">Harley Davidson</option>
-                    <option value="honda">Honda</option>
-                    <option value="indian motorcycles">Indian Motorcycle</option>
-                    <option value="bmw">BMW</option>
-                </select>
-                <select name="status" value="unknown">
-                    <option value="beginner">Beginner</option>
-                    <option value="moderate">Moderate</option>
-                    <option value="expert">Expert</option>
-                </select>
-                <input type="checkbox" name="visited" />
-                <input type="text" name="image"
-                    value="https://sainfoinc.com/wp-content/uploads/2018/02/image-not-available-570x570.jpg" />
+            <form action="/user" method="POST">
+                <input type="text" name="firstName" placeholder="First Name" required />
+                <input type="text" name="lastName" placeholder="Last Name" required />
+                <input type="text" name="typeOfMotorcycle" placeholder="Type of Motorcycle?" required />
+                <input type="text" name="img" placeholder="Place Image of Bike Link Here" />
+                <input type="number" name="yearsRiding" value="14" />
+                <input type="number" name="bikesOwned" value="2" />
+                <input type="text" name="experience" placeholder="Whats your Level of Experience" />
                 <button type="submit">Create User</button>
             </form>
+
         </div>
 
         <div id="flex-grid">
@@ -47,5 +39,8 @@
                     </figure>
                 </a>
                 <% } %>
+                <button type="submit"><a href="/destination/new">Add Destination!</a></button>
         </div>
+
+
    

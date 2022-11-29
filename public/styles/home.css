@@ -1,8 +1,12 @@
 h1 {
     text-align: center;
-    color: gold;
+    color: black;
 }
 
 h2 {
+    text-align: center;
+}
+
+#flex-grid {
     text-align: center;
 }
