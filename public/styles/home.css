@@ -46,6 +46,9 @@ header {
        
 }
 
+.destination-card img {
+    border-radius: 20px;
+}
 
 
 #createForm {
