@@ -1,0 +1,16 @@
+.flex-container {
+    justify-content: center;
+    text-align: center;
+
+}
+
+#destination img{
+    border-radius: 20px;
+}
+
+#destination p{
+    width: 50%;
+    text-align: center;
+    justify-content: center;
+    margin-left: 350px;
+}

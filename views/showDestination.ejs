@@ -15,24 +15,24 @@
                     <%=destination.name%>
                 </h1>
                 <p>
-                     <%= destination.description %>
+                    <%= destination.description %>
                 </p>
-               <p>
-                 Best Time to Visit: <%= destination.timeOfYear %>
-               </p>
-               <p>
-                Miles Round Trip: <%= destination.mileage %><br>
-                Difficulty: <%= destination.difficulty %><br>
-                Terrain: <%= destination.roadTerrain %>
-               </p>
+                <h3>
+                    Best Time to Visit: <%= destination.timeOfYear %>
+                </h3>
+                <h3>
+                    Miles Round Trip: <%= destination.mileage %><br>
+                        Difficulty: <%= destination.difficulty %><br>
+                            Terrain: <%= destination.roadTerrain %>
+                </h3>
             </div>
             <a href="/destination/<%= destination._id %>/edit"><button>Edit Destination</button></a>
             <form action="/destination/<%= destination._id %>?_method=DELETE" method="POST">
-            <button class="delete" type="submit">DELETE</button>
+                <button class="delete" type="submit">DELETE</button>
             </form>
 
         </div>
-        
+
 </body>
 <script>
 
