@@ -48,7 +48,7 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
 	db.User.create(req.body, (err, user) => {
 		// res.send(user);
-        res.redirect('/')
+        res.redirect('/user')
 	});
 });
 

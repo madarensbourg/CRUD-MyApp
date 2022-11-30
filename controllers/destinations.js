@@ -142,7 +142,7 @@ router.put('/:id', (req, res) => {
 		(err, destination) => {
 			res.render('showDestination', {
 				destination: destination,
-				tabTitle: 'NEW'
+				tabTitle: 'New'
 			});
 		}
 	);
