@@ -26,6 +26,17 @@ router.get('/seed', async (req, res) => {
 	}
 });
 
+//index route
+router.get('/', (req, res) => {
+	db.User.find({}, (err, users) => {
+		res.render('showUser', {
+			tabTitle: 'User',
+			users: users,
+		});
+	});
+	// res.render('home')
+});
+
 //Show Route
 router.get('/:id', (req, res) => {
 	db.User.findById(req.params.id, (err, user) => {

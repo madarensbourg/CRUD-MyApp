@@ -140,13 +140,25 @@ router.put('/:id', (req, res) => {
 		req.body,
 		{ new: true },
 		(err, destination) => {
-			res.send(destination);
+			res.render('showDestination', {
+				destination: destination,
+				tabTitle: 'NEW'
+			});
 		}
 	);
 });
 
 
+//Edit Route
+router.get('/:id/edit', (req, res) => {
+	db.Destination.findById(req.params.id, (err, destination) => {
+	res.render('editDestination', {
+		destination: destination,
+		tabTitle: 'Edit ' + destination.name,
+	});
 
+});
+});
 
 
 //Boilerplate exports rputes so they're accessible in server.js
