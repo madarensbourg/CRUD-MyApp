@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <%- include ("./partials/head.ejs") %>
-        <link rel="stylesheet" href="/styles/home.css">
-</head>
+    <head>
+        <%- include ("./partials/head.ejs") %>
+            <link rel="stylesheet" href="/styles/home.css">
+    </head>
 
-<body>
-    <h1 id="home-title">California Cruisin</h1>
-    <h2>Check out some local rides</h2>
-        <div class="flex-container">
+    <body>
+        <header> <h1 id="home-title">California Cruisin</h1>
+        <div class="user-form">
             <form action="/user" method="POST">
+                <h3>Check out some local rides</h3>
                 <input type="text" name="firstName" placeholder="First Name" required />
                 <input type="text" name="lastName" placeholder="Last Name" required />
                 <input type="text" name="typeOfMotorcycle" placeholder="Type of Motorcycle?" required />
@@ -21,26 +21,27 @@
                 <button type="submit">Create User</button>
             </form>
 
-        </div>
-
-        <div id="flex-grid">
-            <% for (let destination of destinations) { %>
-                <a href="/destination/<%= destination._id %>">
-                    <figure class="destination-card">
-                        <img alt="<%= destination.name %>" src="<%= destination.img%>" width="300">
-                        <figcaption>
-                            <h2>
-                                <%=destination.name%>
-                            </h2>
-                            <h4>
-                                <%= destination.description %>
-                            </h4>
-                        </figcaption>
-                    </figure>
-                </a>
-                <% } %>
-                <button type="submit"><a href="/destination/new">Add Destination!</a></button>
-        </div>
-
-
-   
+        </div></header>
+       
+        <main>
+            <div id="flex-grid">
+                <% for (let destination of destinations) { %>
+                    <a class="des-card" href="/destination/<%= destination._id %>">
+                        <figure class="destination-card">
+                            <img alt="<%= destination.name %>" src="<%= destination.img%>" width="300">
+                            <figcaption>
+                                <h2>
+                                    <%=destination.name%>
+                                </h2>
+                                <h4>
+                                    <%= destination.description %>
+                                </h4>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    <% } %>
+                    <button type="submit"><a href="/destination/new">Add Destination!</a></button>
+            </div>
+        </main>
+    </body>
+</html>
